@@ -3,7 +3,7 @@
 //  sprites
 //
 //  Created by Vladas Zakrevskis on 7/8/19.
-//  Copyright © 2019 VladasZ. All rights reserved.
+//  Copyright Â© 2019 VladasZ. All rights reserved.
 //
 
 #pragma once
@@ -12,17 +12,15 @@
 
 namespace sprites {
 
-	class Sprite {
+class Sprite {
 
-		gm::Point _position;
+    gm::Point _position;
 
-	public:
+public:
 
+    gm::Point position() const;
+    void set_position(const gm::Point&);
 
-		gm::Point position() const;
-		void set_position(const gm::Point&);
-		
-
-	};
+};
 
 }
