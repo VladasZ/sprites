@@ -12,3 +12,11 @@ using namespace gm;
 using namespace sprites;
 
 
+
+Point Sprite::position() const {
+	return _position;
+}
+
+void Sprite::set_position(const Point& position) {
+	_position = position;
+}
