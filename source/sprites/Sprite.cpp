@@ -12,10 +12,6 @@ using namespace gm;
 using namespace sprites;
 
 Point Sprite::position() const {
-
-}
-
-Point Sprite::position() const {
 	return _position;
 }
 
