@@ -7,9 +7,30 @@
 //
 
 #include "Sprite.hpp"
+#include "Sprites.hpp"
 
 using namespace gm;
 using namespace sprites;
+
+Sprite::Sprite(Image* image) : _image(image) {
+
+}
+
+Sprite::~Sprite() {
+
+}
+
+Image* Sprite::image() const {
+	return _image;
+}
+
+gm::Size Sprite::size() const {
+	return _size;
+}
+
+void Sprite::set_size(const gm::Size& size) {
+	_size = size;
+}
 
 Point Sprite::position() const {
 	return _position;
@@ -17,4 +38,19 @@ Point Sprite::position() const {
 
 void Sprite::set_position(const Point& position) {
 	_position = position;
+
+}
+gm::Point Sprite::velocity() const {
+	return _velocity;
+}
+void Sprite::set_velocity(const gm::Point& point) {
+	_velocity = point;
+}
+
+void Sprite::update() {
+	_position += _velocity;
+}
+
+void Sprite::draw() {
+	config::drawer()->draw(this);
 }
