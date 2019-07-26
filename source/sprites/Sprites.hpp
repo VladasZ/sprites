@@ -11,11 +11,7 @@
 #include "Sprite.hpp"
 #include "SpriteDrawer.hpp"
 
-namespace sprites {
-
-	struct config {
-		static void set_drawer(SpriteDrawer*);
-		static SpriteDrawer* drawer();
-	};
-
+namespace sprites::config {
+	void set_drawer(SpriteDrawer*);
+	SpriteDrawer* drawer();
 }

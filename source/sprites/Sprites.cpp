@@ -10,6 +10,7 @@
 #include "Sprites.hpp"
 
 using namespace sprites;
+using namespace config;
 
 static SpriteDrawer* _drawer = nullptr;
 

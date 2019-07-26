@@ -8,6 +8,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include "Size.hpp"
 #include "Point.hpp"
 #include "Image.hpp"
@@ -21,6 +23,8 @@ class Sprite {
 	gm::Size _size;
     gm::Point _position;
 	gm::Point _velocity;
+
+	std::vector<Sprite*> _subsprites;
 
 public:
 
@@ -37,6 +41,8 @@ public:
 
 	gm::Point velocity() const;
 	void set_velocity(const gm::Point&);
+
+	void add_subsprite(Sprite*);
 
 	void update();
 

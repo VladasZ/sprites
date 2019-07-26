@@ -17,7 +17,8 @@ Sprite::Sprite(Image* image) : _image(image) {
 }
 
 Sprite::~Sprite() {
-
+	for (auto sprite : _subsprites)
+		delete sprite;
 }
 
 Image* Sprite::image() const {
@@ -47,10 +48,16 @@ void Sprite::set_velocity(const gm::Point& point) {
 	_velocity = point;
 }
 
+void Sprite::add_subsprite(Sprite* sprite) {
+	_subsprites.push_back(sprite);
+}
+
 void Sprite::update() {
 	_position += _velocity;
 }
 
 void Sprite::draw() {
 	config::drawer()->draw(this);
+	for (auto sprite : _subsprites)
+		config::drawer()->draw(sprite);
 }
