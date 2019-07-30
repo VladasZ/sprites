@@ -18,35 +18,29 @@ namespace sprites {
 
 class Sprite {
 
-	Image* _image;
+protected:
 
-	gm::Size _size = { 100, 100 };
-    gm::Point _position;
-	gm::Point _velocity;
+	Image* _image;
 
 	std::vector<Sprite*> _subsprites;
 
 public:
+
+	gm::Size size = { 100, 100 };
+	gm::Point position;
+	gm::Point velocity;
 
 	Sprite(Image* image);
 	virtual ~Sprite();
 
 	Image* image() const;
 
-	gm::Size size() const;
-	void set_size(const gm::Size&);
-
-    gm::Point position() const;
-    void set_position(const gm::Point&);
-
-	gm::Point velocity() const;
-	void set_velocity(const gm::Point&);
-
 	void add_subsprite(Sprite*);
 
-	void update();
+	virtual void update();
 
 	void draw();
+
 };
 
 }

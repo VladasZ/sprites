@@ -25,35 +25,12 @@ Image* Sprite::image() const {
 	return _image;
 }
 
-gm::Size Sprite::size() const {
-	return _size;
-}
-
-void Sprite::set_size(const gm::Size& size) {
-	_size = size;
-}
-
-Point Sprite::position() const {
-	return _position;
-}
-
-void Sprite::set_position(const Point& position) {
-	_position = position;
-
-}
-gm::Point Sprite::velocity() const {
-	return _velocity;
-}
-void Sprite::set_velocity(const gm::Point& point) {
-	_velocity = point;
-}
-
 void Sprite::add_subsprite(Sprite* sprite) {
 	_subsprites.push_back(sprite);
 }
 
 void Sprite::update() {
-	_position += _velocity;
+	position += velocity;
 }
 
 void Sprite::draw() {
