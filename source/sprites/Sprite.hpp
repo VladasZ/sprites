@@ -20,7 +20,7 @@ class Sprite {
 
 	Image* _image;
 
-	gm::Size _size;
+	gm::Size _size = { 100, 100 };
     gm::Point _position;
 	gm::Point _velocity;
 
