@@ -22,8 +22,6 @@ protected:
 
 	Image* _image;
 
-	std::vector<Sprite*> _subsprites;
-
 public:
 
 	gm::Size size = { 100, 100 };
@@ -34,8 +32,6 @@ public:
 	virtual ~Sprite();
 
 	Image* image() const;
-
-	void add_subsprite(Sprite*);
 
 	virtual void update();
 

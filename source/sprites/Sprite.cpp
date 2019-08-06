@@ -17,16 +17,11 @@ Sprite::Sprite(Image* image) : _image(image) {
 }
 
 Sprite::~Sprite() {
-	for (auto sprite : _subsprites)
-		delete sprite;
+
 }
 
 Image* Sprite::image() const {
 	return _image;
-}
-
-void Sprite::add_subsprite(Sprite* sprite) {
-	_subsprites.push_back(sprite);
 }
 
 void Sprite::update() {
@@ -35,6 +30,4 @@ void Sprite::update() {
 
 void Sprite::draw() {
 	config::drawer()->draw(this);
-	for (auto sprite : _subsprites)
-		config::drawer()->draw(sprite);
 }

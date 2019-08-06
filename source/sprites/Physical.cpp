@@ -28,9 +28,5 @@ void Physical::update() {
 		next_position.y > bounds.max_y())
 		velocity.invert_y();
 
-	velocity.y += gravity;
-
-	velocity.add_length(-1);
-
 	Sprite::update();
 }

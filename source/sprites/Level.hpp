@@ -14,11 +14,13 @@ namespace sprites {
 
 	class Level {
 
-		std::vector<Sprite *> _sprites;
+        std::vector<Sprite*> _sprites;
+        std::vector<Sprite*> _platforms;
 
 	public:
 
 		void add_sprite(Sprite*);
+        void add_platform(Sprite*);
 
 		void update();
 		void draw();

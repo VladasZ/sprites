@@ -14,6 +14,10 @@ void Level::add_sprite(Sprite* sprite) {
 	_sprites.push_back(sprite);
 }
 
+void Level::add_platform(Sprite *platform) {
+    _platforms.push_back(platform);
+}
+
 void Level::update() {
 	for (auto sprite : _sprites)
 		sprite->update();
@@ -22,4 +26,6 @@ void Level::update() {
 void Level::draw() {
 	for (auto sprite : _sprites)
 		sprite->draw();
+    for (auto sprite : _platforms)
+        sprite->draw();
 }
