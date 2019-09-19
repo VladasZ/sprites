@@ -8,21 +8,30 @@
 
 #pragma once
 
+#include "Box2D/Box2D.h"
+
 #include "Sprite.hpp"
 
 namespace sprites {
 
 	class Level {
 
+    protected:
+
+        b2World* _world;
+
+
         std::vector<Sprite*> _sprites;
         std::vector<Sprite*> _platforms;
 
 	public:
 
+	    Level();
+
 		void add_sprite(Sprite*);
         void add_platform(Sprite*);
 
-		void update();
+		virtual void update();
 		void draw();
 
 	};

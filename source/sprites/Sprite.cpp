@@ -12,20 +12,26 @@
 using namespace gm;
 using namespace sprites;
 
-Sprite::Sprite(Image* image) : _image(image) {
-
+Sprite::Sprite(Image* image, const gm::Size& size, const gm::Point& position) : _image(image), _size(size) {
+    _body_def.position = { position.x, position.y };
+    _shape.SetAsBox(size.width / 2, size.height / 2);
+    _fixture.shape = &_shape;
 }
 
 Sprite::~Sprite() {
 
 }
 
-Image* Sprite::image() const {
-	return _image;
+gm::Point Sprite::position() const {
+    return gm::Point { _body->GetPosition() };
 }
 
-void Sprite::update() {
-	position += velocity;
+gm::Size Sprite::size() const {
+    return _size;
+}
+
+Image* Sprite::image() const {
+	return _image;
 }
 
 void Sprite::draw() {

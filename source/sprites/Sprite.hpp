@@ -10,33 +10,48 @@
 
 #include <vector>
 
+#include "Box2D/Box2D.h"
+
 #include "Size.hpp"
 #include "Point.hpp"
 #include "Image.hpp"
 
 namespace sprites {
 
-class Sprite {
+    class Level;
 
-protected:
+    class Sprite {
 
-	Image* _image;
+        friend Level;
 
-public:
+    protected:
 
-	gm::Size size = { 100, 100 };
-	gm::Point position;
-	gm::Point velocity;
+        gm::Size _size;
 
-	Sprite(Image* image);
-	virtual ~Sprite();
+        b2Body* _body;
+        b2BodyDef _body_def;
+        b2PolygonShape _shape;
+        b2FixtureDef _fixture;
 
-	Image* image() const;
+        Image* _image;
 
-	virtual void update();
+    public:
 
-	void draw();
+        Sprite(Image* image, const gm::Size& size, const gm::Point& position);
 
-};
+        virtual ~Sprite() = 0;
+
+    public:
+
+        gm::Point position() const;
+        gm::Size size() const;
+
+        Image* image() const;
+
+    public:
+
+        void draw();
+
+    };
 
 }
