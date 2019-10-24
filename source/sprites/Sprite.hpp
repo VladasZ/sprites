@@ -45,6 +45,7 @@ namespace sprites {
 
         gm::Point position() const;
         gm::Size size() const;
+		float rotation() const;
 
         Image* image() const;
 

@@ -30,6 +30,10 @@ gm::Size Sprite::size() const {
     return _size;
 }
 
+float Sprite::rotation() const {
+	return _body->GetAngle();
+}
+
 Image* Sprite::image() const {
 	return _image;
 }
