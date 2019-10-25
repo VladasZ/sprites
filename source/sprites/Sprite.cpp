@@ -34,6 +34,11 @@ float Sprite::rotation() const {
 	return _body->GetAngle();
 }
 
+void Sprite::add_rotation(float rot) {
+    _body->SetAngularVelocity(rot);
+}
+
+
 Image* Sprite::image() const {
 	return _image;
 }

@@ -47,6 +47,8 @@ namespace sprites {
         gm::Size size() const;
 		float rotation() const;
 
+		void add_rotation(float);
+
         Image* image() const;
 
     public:
