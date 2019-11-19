@@ -6,7 +6,10 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
+#ifndef NO_BOX2D
+
 #include "DynamicBody.hpp"
+
 
 using namespace sprites;
 
@@ -17,3 +20,5 @@ DynamicBody::DynamicBody(Image* image, const gm::Size& size, const gm::Point& po
     _fixture.friction = 0.3f;
     _fixture.restitution = 1.0f;
 }
+
+#endif

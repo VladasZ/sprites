@@ -6,6 +6,8 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
+#ifndef NO_BOX2D
+
 #include "Log.hpp"
 #include "Sprites.hpp"
 
@@ -31,3 +33,5 @@ SpriteDrawer* config::drawer() {
 #endif
 	return _drawer;
 }
+
+#endif

@@ -8,6 +8,8 @@
 
 #pragma once
 
+#ifndef NO_BOX2D
+
 #include "Sprite.hpp"
 
 namespace sprites {
@@ -23,3 +25,5 @@ namespace sprites {
 	};
 
 }
+
+#endif

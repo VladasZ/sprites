@@ -8,6 +8,8 @@
 
 #pragma once
 
+#ifndef NO_BOX2D
+
 #include "Sprite.hpp"
 #include "SpriteDrawer.hpp"
 
@@ -15,3 +17,5 @@ namespace sprites::config {
 	void set_drawer(SpriteDrawer*);
 	SpriteDrawer* drawer();
 }
+
+#endif

@@ -6,6 +6,8 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
+#ifndef NO_BOX2D
+
 #include "Level.hpp"
 
 using namespace sprites;
@@ -38,3 +40,5 @@ void Level::draw() {
     for (auto sprite : _platforms)
         sprite->draw();
 }
+
+#endif

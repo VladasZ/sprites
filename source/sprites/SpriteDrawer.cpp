@@ -6,6 +6,8 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
+#ifndef NO_BOX2D
+
 #include "SpriteDrawer.hpp"
 
 using namespace sprites;
@@ -13,3 +15,5 @@ using namespace sprites;
 SpriteDrawer::~SpriteDrawer() {
 
 }
+
+#endif

@@ -8,6 +8,8 @@
 
 #pragma once
 
+#ifndef NO_BOX2D
+
 #include <vector>
 
 #include "Box2D/Box2D.h"
@@ -58,3 +60,5 @@ namespace sprites {
     };
 
 }
+
+#endif

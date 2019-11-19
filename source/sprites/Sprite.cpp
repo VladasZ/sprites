@@ -6,6 +6,8 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
+#ifndef NO_BOX2D
+
 #include "Sprite.hpp"
 #include "Sprites.hpp"
 
@@ -46,3 +48,5 @@ Image* Sprite::image() const {
 void Sprite::draw() {
 	config::drawer()->draw(this);
 }
+
+#endif

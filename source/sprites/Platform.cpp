@@ -6,6 +6,8 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
+#ifndef NO_BOX2D
+
 #include "Platform.hpp"
 
 using namespace sprites;
@@ -13,3 +15,5 @@ using namespace sprites;
 Platform::Platform(Image* image, const gm::Size& size, const gm::Point& position) : Sprite(image, size, position) {
 
 }
+
+#endif
