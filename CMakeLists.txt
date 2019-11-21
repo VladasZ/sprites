@@ -5,8 +5,3 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 setup_project(sprites)
-
-add_subdirectory(source/sprites)
-if(${DESKTOP_BUILD})
-  add_subdirectory(source/sprites_test)
-endif()
