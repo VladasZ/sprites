@@ -14,7 +14,7 @@
 using namespace gm;
 using namespace sprites;
 
-Sprite::Sprite(Image* image, const gm::Size& size, const gm::Point& position) : _image(image), _size(size) {
+Sprite::Sprite(Image* image, const gm::Size& size, const gm::Point& position) : _size(size), _image(image) {
     _body_def.position = { position.x, position.y };
     _shape.SetAsBox(size.width / 2, size.height / 2);
     _fixture.shape = &_shape;
