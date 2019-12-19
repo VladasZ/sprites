@@ -35,10 +35,12 @@ void Level::update() {
 }
 
 void Level::draw() {
-	for (auto sprite : _sprites)
-		sprite->draw();
-    for (auto sprite : _platforms)
+    for (auto sprite : _sprites) {
         sprite->draw();
+    }
+    for (auto sprite : _platforms) {
+        sprite->draw();
+    }
 }
 
 #endif
