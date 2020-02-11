@@ -25,7 +25,7 @@ Sprite::~Sprite() {
 }
 
 gm::Point Sprite::position() const {
-    return gm::Point { _body->GetPosition() };
+    return gm::Point::convert(_body->GetPosition());
 }
 
 gm::Size Sprite::size() const {
