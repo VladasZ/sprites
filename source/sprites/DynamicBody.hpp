@@ -8,21 +8,17 @@
 
 #pragma once
 
-#ifdef USING_BOX2D
-
 #include "Sprite.hpp"
 
-namespace sprites {
 
-class DynamicBody : public Sprite {
+namespace sprite {
 
-public:
+    class DynamicBody : public Sprite {
 
-    DynamicBody(Image* image, const gm::Size& size, const gm::Point& position);
+    public:
 
+        DynamicBody(Image* image, const gm::Size& size, const gm::Point& position);
 
-};
+    };
 
 }
-
-#endif

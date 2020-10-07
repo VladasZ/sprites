@@ -8,17 +8,15 @@
 
 #pragma once
 
-#ifdef USING_BOX2D
-
 #include <vector>
-
-#include "Box2D/Box2D.h"
 
 #include "Size.hpp"
 #include "Point.hpp"
 #include "Image.hpp"
+#include "BoxInclude.hpp"
 
-namespace sprites {
+
+namespace sprite {
 
     class Level;
 
@@ -60,5 +58,3 @@ namespace sprites {
     };
 
 }
-
-#endif

@@ -6,25 +6,22 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
-#ifdef USING_BOX2D
-
 #include "Log.hpp"
 #include "Sprites.hpp"
 
-using namespace sprites;
+using namespace sprite;
 using namespace config;
+
 
 static SpriteDrawer* _drawer = nullptr;
 
 void config::set_drawer(SpriteDrawer* drawer) {
-#ifdef DEBUG
 	if (_drawer != nullptr) {
         Fatal("Sprite drawer must be set only once");
     }
 	if (drawer == nullptr) {
         Fatal("Sprite drawer must be nonnull");
     }
-#endif
 	_drawer = drawer;
 }
 
@@ -36,5 +33,3 @@ SpriteDrawer* config::drawer() {
 #endif
 	return _drawer;
 }
-
-#endif

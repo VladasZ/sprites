@@ -6,11 +6,10 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
-#ifdef USING_BOX2D
-
 #include "Level.hpp"
 
-using namespace sprites;
+using namespace sprite;
+
 
 Level::Level() {
     b2Vec2 gravity(0.0f, -10.0f);
@@ -42,5 +41,3 @@ void Level::draw() {
         sprite->draw();
     }
 }
-
-#endif

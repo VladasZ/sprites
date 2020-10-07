@@ -8,11 +8,10 @@
 
 #pragma once
 
-#ifdef USING_BOX2D
-
 #include "Sprite.hpp"
 
-namespace sprites {
+
+namespace sprite {
 
 	class SpriteDrawer {
 
@@ -25,5 +24,3 @@ namespace sprites {
 	};
 
 }
-
-#endif

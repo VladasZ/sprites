@@ -8,21 +8,17 @@
 
 #pragma once
 
-#ifdef USING_BOX2D
-
 #include "Sprite.hpp"
 
-namespace sprites {
 
-class Platform : public Sprite {
+namespace sprite {
 
-public:
+    class Platform : public Sprite {
 
-    Platform(Image* image, const gm::Size& size, const gm::Point& position);
+    public:
 
+        Platform(Image* image, const gm::Size& size, const gm::Point& position);
 
-};
+    };
 
 }
-
-#endif

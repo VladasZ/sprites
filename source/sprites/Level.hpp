@@ -8,20 +8,16 @@
 
 #pragma once
 
-#ifdef USING_BOX2D
-
-#include "Box2D/Box2D.h"
-
 #include "Sprite.hpp"
 
-namespace sprites {
+
+namespace sprite {
 
 	class Level {
 
     protected:
 
         b2World* _world;
-
 
         std::vector<Sprite*> _sprites;
         std::vector<Sprite*> _platforms;
@@ -39,5 +35,3 @@ namespace sprites {
 	};
 
 }
-
-#endif

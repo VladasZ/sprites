@@ -6,13 +6,13 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
-#ifdef USING_BOX2D
-
 #include "Sprite.hpp"
 #include "Sprites.hpp"
+#include "ForceConvert.hpp"
 
 using namespace gm;
-using namespace sprites;
+using namespace sprite;
+
 
 Sprite::Sprite(Image* image, const gm::Size& size, const gm::Point& position) : _size(size), _image(image) {
     _body_def.position = { position.x, position.y };
@@ -25,7 +25,7 @@ Sprite::~Sprite() {
 }
 
 gm::Point Sprite::position() const {
-    return gm::Point::convert(_body->GetPosition());
+    return cu::force_convert<Point>(_body->GetPosition());
 }
 
 gm::Size Sprite::size() const {
@@ -48,5 +48,3 @@ Image* Sprite::image() const {
 void Sprite::draw() {
 	config::drawer()->draw(this);
 }
-
-#endif

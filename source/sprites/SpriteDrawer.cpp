@@ -6,14 +6,11 @@
 //  Copyright © 2019 VladasZ. All rights reserved.
 //
 
-#ifdef USING_BOX2D
-
 #include "SpriteDrawer.hpp"
 
-using namespace sprites;
+using namespace sprite;
+
 
 SpriteDrawer::~SpriteDrawer() {
 
 }
-
-#endif

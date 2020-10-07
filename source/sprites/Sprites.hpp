@@ -8,14 +8,11 @@
 
 #pragma once
 
-#ifdef USING_BOX2D
-
 #include "Sprite.hpp"
 #include "SpriteDrawer.hpp"
 
-namespace sprites::config {
+
+namespace sprite::config {
 	void set_drawer(SpriteDrawer*);
 	SpriteDrawer* drawer();
 }
-
-#endif
