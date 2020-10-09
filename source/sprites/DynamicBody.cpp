@@ -12,9 +12,11 @@ using namespace sprite;
 
 
 DynamicBody::DynamicBody(Image* image, const gm::Size& size, const gm::Point& position) : Sprite(image, size, position) {
+#ifdef USING_BOX2D
     _body_def.type = b2_dynamicBody;
     _fixture.shape = &_shape;
     _fixture.density = 1.0f;
     _fixture.friction = 0.3f;
     _fixture.restitution = 1.0f;
+#endif
 }

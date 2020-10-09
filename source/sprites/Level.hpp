@@ -17,7 +17,9 @@ namespace sprite {
 
     protected:
 
+#ifdef USING_BOX2D
         b2World* _world;
+#endif
 
         std::vector<Sprite*> _sprites;
         std::vector<Sprite*> _platforms;

@@ -12,14 +12,18 @@ using namespace sprite;
 
 
 Level::Level() {
+#ifdef USING_BOX2D
     b2Vec2 gravity(0.0f, -10.0f);
     _world = new b2World(gravity);
+#endif
 }
 
 void Level::add_sprite(Sprite* sprite) {
+#ifdef USING_BOX2D
     sprite->_body = _world->CreateBody(&sprite->_body_def);
     sprite->_body->CreateFixture(&sprite->_fixture);
 	_sprites.push_back(sprite);
+#endif
 }
 
 void Level::add_platform(Sprite *platform) {
@@ -27,10 +31,12 @@ void Level::add_platform(Sprite *platform) {
 }
 
 void Level::update() {
-    static const int32 velocityIterations = 6;
-    static const int32 positionIterations = 2;
+    static const int32_t velocityIterations = 6;
+    static const int32_t positionIterations = 2;
 
+#ifdef USING_BOX2D
     _world->Step(1.0f / 30.0f, velocityIterations, positionIterations);
+#endif
 }
 
 void Level::draw() {
