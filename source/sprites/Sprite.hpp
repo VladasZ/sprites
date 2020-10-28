@@ -29,7 +29,7 @@ namespace sprite {
         gm::Size _size;
 
 #ifdef USING_BOX2D
-        b2Body* _body;
+        b2Body* _body = nullptr;
         b2BodyDef _body_def;
         b2PolygonShape _shape;
         b2FixtureDef _fixture;
@@ -41,7 +41,7 @@ namespace sprite {
 
         Sprite(Image* image, const gm::Size& size, const gm::Point& position);
 
-        virtual ~Sprite() = 0;
+        virtual ~Sprite() = default;
 
     public:
 

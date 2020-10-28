@@ -22,10 +22,6 @@ Sprite::Sprite(Image* image, const gm::Size& size, const gm::Point& position) : 
 #endif
 }
 
-Sprite::~Sprite() {
-
-}
-
 gm::Point Sprite::position() const {
 #ifdef USING_BOX2D
     return cu::force_convert<Point>(_body->GetPosition());
@@ -51,7 +47,6 @@ void Sprite::add_rotation(float rot) {
     _body->SetAngularVelocity(rot);
 #endif
 }
-
 
 Image* Sprite::image() const {
 	return _image;
