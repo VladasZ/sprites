@@ -14,7 +14,7 @@ using namespace gm;
 using namespace sprite;
 
 
-Sprite::Sprite(Image* image, const gm::Size& size, const gm::Point& position) : _size(size), _image(image) {
+Sprite::Sprite(Image* image, const gm::Point& position, const gm::Size& size) : _size(size), _image(image) {
 #ifdef USING_BOX2D
     _body_def.position = { position.x, position.y };
     _shape.SetAsBox(size.width / 2, size.height / 2);

@@ -30,6 +30,10 @@ void Level::add_platform(Sprite *platform) {
     _platforms.push_back(platform);
 }
 
+void Level::set_gravity(float gravity) {
+    _world->SetGravity({ 0, -gravity });
+}
+
 void Level::update() {
     static const int32_t velocityIterations = 6;
     static const int32_t positionIterations = 2;

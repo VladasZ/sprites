@@ -39,7 +39,7 @@ namespace sprite {
 
     public:
 
-        Sprite(Image* image, const gm::Size& size, const gm::Point& position);
+        Sprite(Image* image, const gm::Point& position, const gm::Size& size);
 
         virtual ~Sprite() = default;
 

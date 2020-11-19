@@ -31,6 +31,8 @@ namespace sprite {
 		void add_sprite(Sprite*);
         void add_platform(Sprite*);
 
+		void set_gravity(float);
+
 		virtual void update();
 		void draw();
 

@@ -11,6 +11,6 @@
 using namespace sprite;
 
 
-Platform::Platform(Image* image, const gm::Size& size, const gm::Point& position) : Sprite(image, size, position) {
+Platform::Platform(Image* image, const gm::Point& position, const gm::Size& size) : Sprite(image, position, size) {
 
 }
