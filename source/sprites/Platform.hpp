@@ -17,7 +17,7 @@ namespace sprite {
 
     public:
 
-        Platform(Image* image, const gm::Point& position, const gm::Size& size);
+        Platform(const gm::Point& position, const gm::Size& size);
 
     };
 

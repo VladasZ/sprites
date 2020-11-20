@@ -17,7 +17,7 @@ namespace sprite {
 
     public:
 
-        DynamicBody(Image* image, const gm::Point& position, const gm::Size& size);
+        DynamicBody(const gm::Point& position, const gm::Size& size);
 
     };
 

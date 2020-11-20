@@ -13,6 +13,7 @@
 #include "Size.hpp"
 #include "Point.hpp"
 #include "Image.hpp"
+#include "Color.hpp"
 #include "BoxInclude.hpp"
 
 
@@ -35,15 +36,17 @@ namespace sprite {
         b2FixtureDef _fixture;
 #endif
 
-        Image* _image;
+        Image* _image = nullptr;
 
     public:
 
-        Sprite(Image* image, const gm::Point& position, const gm::Size& size);
+        Sprite(const gm::Point& position, const gm::Size& size);
 
         virtual ~Sprite() = default;
 
     public:
+
+        gm::Color color;
 
         gm::Point position() const;
         gm::Size size() const;
@@ -51,9 +54,12 @@ namespace sprite {
 
 		void add_rotation(float);
 
+        Sprite* set_image(Image*);
         Image* image() const;
 
-    public:
+        bool has_image() const { return _image; }
+
+    private:
 
         void draw();
 

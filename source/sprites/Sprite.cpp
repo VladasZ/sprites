@@ -14,7 +14,7 @@ using namespace gm;
 using namespace sprite;
 
 
-Sprite::Sprite(Image* image, const gm::Point& position, const gm::Size& size) : _size(size), _image(image) {
+Sprite::Sprite(const gm::Point& position, const gm::Size& size) : _size(size) {
 #ifdef USING_BOX2D
     _body_def.position = { position.x, position.y };
     _shape.SetAsBox(size.width / 2, size.height / 2);
@@ -46,6 +46,11 @@ void Sprite::add_rotation(float rot) {
 #ifdef USING_BOX2D
     _body->SetAngularVelocity(rot);
 #endif
+}
+
+Sprite* Sprite::set_image(Image* image) {
+    _image = image;
+    return this;
 }
 
 Image* Sprite::image() const {

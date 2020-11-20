@@ -8,10 +8,12 @@
 
 #pragma once
 
+#include "Sprite.hpp"
+
 
 namespace sprite {
 
-	class Unit {
+	class Unit : Sprite {
 
 	};
 
