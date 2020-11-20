@@ -19,6 +19,8 @@ namespace sprite {
 
 		Unit(const gm::Point& position, const gm::Size& size);
 
+		void jump();
+
 	};
 
 }

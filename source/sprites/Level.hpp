@@ -34,6 +34,8 @@ namespace sprite {
 		void set_gravity(float);
 
 		virtual void update();
+		virtual void setup() { }
+
 		void draw();
 
 	};
