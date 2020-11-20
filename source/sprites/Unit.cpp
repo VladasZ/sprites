@@ -9,3 +9,8 @@
 #include "Unit.hpp"
 
 using namespace sprite;
+
+
+Unit::Unit(const gm::Point& position, const gm::Size& size) : DynamicBody(position, size) {
+
+}

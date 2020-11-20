@@ -8,12 +8,16 @@
 
 #pragma once
 
-#include "Sprite.hpp"
+#include "DynamicBody.hpp"
 
 
 namespace sprite {
 
-	class Unit : Sprite {
+	class Unit : public DynamicBody {
+		
+	public:
+
+		Unit(const gm::Point& position, const gm::Size& size);
 
 	};
 

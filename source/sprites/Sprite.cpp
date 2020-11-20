@@ -17,8 +17,11 @@ using namespace sprite;
 Sprite::Sprite(const gm::Point& position, const gm::Size& size) : _size(size) {
 #ifdef USING_BOX2D
     _body_def.position = { position.x, position.y };
-    _shape.SetAsBox(size.width / 2, size.height / 2);
-    _fixture.shape = &_shape;
+
+    auto poly_shape = new b2PolygonShape();
+    poly_shape->SetAsBox(size.width / 2, size.height / 2);
+    _shape = poly_shape;
+    _fixture.shape = _shape;
 #endif
 }
 
@@ -55,6 +58,26 @@ Sprite* Sprite::set_image(Image* image) {
 
 Image* Sprite::image() const {
 	return _image;
+}
+
+void Sprite::fix_rotation(bool fixed) {
+#ifdef USING_BOX2D
+    _body->SetFixedRotation(fixed);
+#endif
+}
+
+float Sprite::mass() const {
+#ifdef USING_BOX2D
+    return _body->GetMass();
+#else
+    return 0;
+#endif
+}
+
+void Sprite::add_impulse(const gm::Point& impulse) {
+#ifdef USING_BOX2D
+    _body->ApplyLinearImpulseToCenter({ impulse.x, impulse.y }, true);
+#endif
 }
 
 void Sprite::draw() {

@@ -32,7 +32,7 @@ namespace sprite {
 #ifdef USING_BOX2D
         b2Body* _body = nullptr;
         b2BodyDef _body_def;
-        b2PolygonShape _shape;
+        b2Shape* _shape = nullptr;
         b2FixtureDef _fixture;
 #endif
 
@@ -58,6 +58,12 @@ namespace sprite {
         Image* image() const;
 
         bool has_image() const { return _image; }
+
+        void fix_rotation(bool);
+
+        float mass() const;
+
+        void add_impulse(const gm::Point&);
 
     private:
 
