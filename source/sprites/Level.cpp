@@ -31,7 +31,9 @@ void Level::add_platform(Sprite *platform) {
 }
 
 void Level::set_gravity(float gravity) {
+#ifdef USING_BOX2D
     _world->SetGravity({ 0, -gravity });
+#endif
 }
 
 void Level::update() {
