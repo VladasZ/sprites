@@ -57,7 +57,7 @@ namespace sprite {
         Sprite* set_image(Image*);
         Image* image() const;
 
-        bool has_image() const { return _image; }
+        bool has_image() const;
 
         void fix_rotation(bool);
 

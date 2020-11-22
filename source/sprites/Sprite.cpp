@@ -60,6 +60,10 @@ Image* Sprite::image() const {
 	return _image;
 }
 
+bool Sprite::has_image() const {
+    return _image;
+}
+
 void Sprite::fix_rotation(bool fixed) {
 #ifdef USING_BOX2D
     _body->SetFixedRotation(fixed);
