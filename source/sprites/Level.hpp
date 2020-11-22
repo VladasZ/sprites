@@ -33,7 +33,7 @@ namespace sprite {
 
 		void set_gravity(float);
 
-		virtual void update();
+		virtual void update(float frame_time);
 		virtual void setup() { }
 
 		void draw();

@@ -36,12 +36,12 @@ void Level::set_gravity(float gravity) {
 #endif
 }
 
-void Level::update() {
+void Level::update(float frame_time) {
     static const int32_t velocityIterations = 6;
     static const int32_t positionIterations = 2;
 
 #ifdef USING_BOX2D
-    _world->Step(1.0f / 30.0f, velocityIterations, positionIterations);
+    _world->Step(frame_time, velocityIterations, positionIterations);
 #endif
 }
 
