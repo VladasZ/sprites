@@ -13,7 +13,7 @@ using namespace sprite;
 
 Level::Level() {
 #ifdef USING_BOX2D
-    b2Vec2 gravity(0.0f, -10.0f);
+    b2Vec2 gravity(0.0f, -9.8f);
     _world = new b2World(gravity);
 #endif
 }
