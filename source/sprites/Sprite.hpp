@@ -33,7 +33,8 @@ namespace sprite {
         b2Body* _body = nullptr;
         b2BodyDef _body_def;
         b2Shape* _shape = nullptr;
-        b2FixtureDef _fixture;
+        b2FixtureDef _fixture_def;
+        b2Fixture* _fixture = nullptr;
 #endif
 
         Image* _image = nullptr;
@@ -51,6 +52,8 @@ namespace sprite {
         gm::Point position() const;
         gm::Size size() const;
 		float rotation() const;
+
+        void set_restitution(float);
 
 		void add_rotation(float);
 

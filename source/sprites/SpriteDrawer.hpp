@@ -19,6 +19,7 @@ namespace sprite {
 
 		virtual ~SpriteDrawer();
 
+		virtual void set_camera_position(const gm::Point&) = 0;
 		virtual void draw(Sprite* sprite) = 0;
 
 	};

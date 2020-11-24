@@ -17,11 +17,10 @@ using namespace sprite;
 Sprite::Sprite(const gm::Point& position, const gm::Size& size) : _size(size) {
 #ifdef USING_BOX2D
     _body_def.position = { position.x, position.y };
-
     auto poly_shape = new b2PolygonShape();
     poly_shape->SetAsBox(size.width / 2, size.height / 2);
     _shape = poly_shape;
-    _fixture.shape = _shape;
+    _fixture_def.shape = _shape;
 #endif
 }
 
@@ -42,6 +41,12 @@ float Sprite::rotation() const {
 	return _body->GetAngle();
 #else
     return 0;
+#endif
+}
+
+void Sprite::set_restitution(float res) {
+#ifdef USING_BOX2D
+    _fixture->SetRestitution(res);
 #endif
 }
 

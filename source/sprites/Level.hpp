@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include "Unit.hpp"
 #include "Sprite.hpp"
 
 
@@ -17,19 +18,19 @@ namespace sprite {
 
     protected:
 
+		Unit* _player = nullptr;
+
 #ifdef USING_BOX2D
-        b2World* _world;
+        b2World* _world = nullptr;
 #endif
 
         std::vector<Sprite*> _sprites;
-        std::vector<Sprite*> _platforms;
 
 	public:
 
 	    Level();
 
 		void add_sprite(Sprite*);
-        void add_platform(Sprite*);
 
 		void set_gravity(float);
 
