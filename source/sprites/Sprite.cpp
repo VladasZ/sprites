@@ -24,6 +24,13 @@ Sprite::Sprite(const gm::Point& position, const gm::Size& size) : _size(size) {
 #endif
 }
 
+gm::Point Sprite::velocity() const {
+#ifdef USING_BOX2D
+    auto& vel = _body->GetLinearVelocity();
+    return { vel.x, vel.y };
+#endif
+}
+
 gm::Point Sprite::position() const {
 #ifdef USING_BOX2D
     return cu::force_convert<Point>(_body->GetPosition());

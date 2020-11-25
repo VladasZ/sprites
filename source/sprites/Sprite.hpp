@@ -47,7 +47,10 @@ namespace sprite {
 
     public:
 
+        bool flip = false;
         gm::Color color;
+
+        gm::Point velocity() const;
 
         gm::Point position() const;
         gm::Size size() const;
