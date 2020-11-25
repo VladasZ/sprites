@@ -18,7 +18,7 @@ Level::Level() {
     _world = new b2World(gravity);
 #endif
 
-    _player = new Unit({ 0, 0 }, { 17.0 / 15.0, 28.0 / 15.0 });
+    _player = new Unit({ 0, 20 }, { 17.0 / 15.0, 28.0 / 15.0 });
     add_sprite(_player);
     _player->fix_rotation(true);
     _player->set_restitution(0);

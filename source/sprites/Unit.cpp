@@ -16,6 +16,14 @@ Unit::Unit(const gm::Point& position, const gm::Size& size) : DynamicBody(positi
 }
 
 void Unit::jump() {
-	float impulse = mass() * 20;
+	float impulse = mass() * 10;
 	add_impulse({0, impulse});
+}
+
+void Unit::go_left() {
+	add_impulse({ -mass() * 10, 0 });
+}
+
+void Unit::go_right() {
+	add_impulse({ mass() * 10, 0 });
 }
