@@ -60,3 +60,9 @@ void Level::draw() {
         sprite->draw();
     }
 }
+
+void Level::add_box(const gm::Point& pos, const gm::Size& size) {
+    auto box = new DynamicBody(pos, size);
+    box->color = gm::Color::random();
+    add_sprite(box);
+}

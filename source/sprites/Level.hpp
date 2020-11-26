@@ -9,6 +9,7 @@
 #pragma once
 
 #include "Unit.hpp"
+#include "Event.hpp"
 #include "Sprite.hpp"
 
 
@@ -38,6 +39,8 @@ namespace sprite {
 		virtual void setup() { }
 
 		void draw();
+
+		void add_box(const gm::Point&, const gm::Size&);
 
 	};
 
