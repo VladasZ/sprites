@@ -47,12 +47,16 @@ namespace sprite {
 
     public:
 
-        bool flip = false;
+        gm::Direction direction = gm::Direction::Right;
+
         gm::Color color;
 
-        gm::Point velocity() const;
+        const gm::Point& velocity() const;
 
-        gm::Point position() const;
+        gm::Direction velocity_direction() const;
+
+        const gm::Point& position() const;
+
         gm::Size size() const;
 		float rotation() const;
 

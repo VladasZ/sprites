@@ -46,11 +46,17 @@ void Level::update(float frame_time) {
 #ifdef USING_BOX2D
     _world->Step(frame_time, velocityIterations, positionIterations);
 #endif
+
+    _player->direction = _player->velocity_direction();
 }
 
 void Level::draw() {
-    config::drawer()->set_camera_position(_player->position());
+    const auto& camera_pos = _player->position();
+    config::drawer()->set_camera_position(camera_pos);
     for (auto sprite : _sprites) {
+        if (sprite->position().distanceTo(camera_pos) > 100) {
+            continue;
+        }
         sprite->draw();
     }
 }

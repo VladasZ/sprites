@@ -14,7 +14,7 @@ using namespace gm;
 using namespace sprite;
 
 
-Sprite::Sprite(const gm::Point& position, const gm::Size& size) : _size(size) {
+Sprite::Sprite(const Point& position, const Size& size) : _size(size) {
 #ifdef USING_BOX2D
     _body_def.position = { position.x, position.y };
     auto poly_shape = new b2PolygonShape();
@@ -24,22 +24,27 @@ Sprite::Sprite(const gm::Point& position, const gm::Size& size) : _size(size) {
 #endif
 }
 
-gm::Point Sprite::velocity() const {
+const Point& Sprite::velocity() const {
 #ifdef USING_BOX2D
-    auto& vel = _body->GetLinearVelocity();
-    return { vel.x, vel.y };
+    return reinterpret_cast<const Point&>(_body->GetLinearVelocity());
+#else 
+	return Point::zero;
 #endif
 }
 
-gm::Point Sprite::position() const {
+Direction Sprite::velocity_direction() const {
+    return velocity().directionX();
+}
+
+const Point& Sprite::position() const {
 #ifdef USING_BOX2D
-    return cu::force_convert<Point>(_body->GetPosition());
+	return reinterpret_cast<const Point&>(_body->GetPosition());
 #else
-    return { };
+    return Point::zero;
 #endif
 }
 
-gm::Size Sprite::size() const {
+Size Sprite::size() const {
     return _size;
 }
 
@@ -90,7 +95,7 @@ float Sprite::mass() const {
 #endif
 }
 
-void Sprite::add_impulse(const gm::Point& impulse) {
+void Sprite::add_impulse(const Point& impulse) {
 #ifdef USING_BOX2D
     _body->ApplyLinearImpulseToCenter({ impulse.x, impulse.y }, true);
 #endif
