@@ -17,6 +17,6 @@ DynamicBody::DynamicBody(const gm::Point& position, const gm::Size& size) : Spri
     _fixture_def.shape = _shape;
     _fixture_def.density = 1.0f;
     _fixture_def.friction = 0.3f;
-    _fixture_def.restitution = 1.0f;
+    _fixture_def.restitution = 0.0f;
 #endif
 }

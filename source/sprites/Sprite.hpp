@@ -49,6 +49,7 @@ namespace sprite {
 
         gm::Direction direction = gm::Direction::Right;
 
+        bool is_selected = false;
         gm::Color color = gm::Color::white;
 
         const gm::Point& velocity() const;
