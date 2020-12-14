@@ -8,12 +8,12 @@
 
 #pragma once
 
-#include "Sprite.hpp"
+#include "Body.hpp"
 
 
 namespace sprite {
 
-    class DynamicBody : public Sprite {
+    class DynamicBody : public Body {
 
     public:
 

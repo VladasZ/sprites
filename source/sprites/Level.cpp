@@ -27,8 +27,10 @@ Level::Level() {
 
 void Level::add_sprite(Sprite* sprite) {
 #ifdef USING_BOX2D
-    sprite->_body = _world->CreateBody(&sprite->_body_def);
-    sprite->_fixture = sprite->_body->CreateFixture(&sprite->_fixture_def);
+    if (auto body = dynamic_cast<Body*>(sprite)) {
+        body->_body = _world->CreateBody(&body->_body_def);
+        body->_fixture = body->_body->CreateFixture(&body->_fixture_def);
+    }
 	_sprites.push_back(sprite);
 #endif
 }
@@ -46,8 +48,6 @@ void Level::update(float frame_time) {
 #ifdef USING_BOX2D
     _world->Step(frame_time, velocityIterations, positionIterations);
 #endif
-
-    _player->direction = _player->velocity_direction();
 }
 
 void Level::draw() {
