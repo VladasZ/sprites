@@ -8,6 +8,7 @@
 
 #include "Log.hpp"
 #include "Body.hpp"
+#include "ForceConvert.hpp"
 
 using namespace gm;
 using namespace sprite;
@@ -46,6 +47,14 @@ float Body::rotation() const {
 void Body::fix_rotation(bool fixed) {
 #ifdef USING_BOX2D
     _body->SetFixedRotation(fixed);
+#endif
+}
+
+bool Body::contains(const gm::Point& point) const {
+#ifdef USING_BOX2D
+    return _fixture->TestPoint(cu::cast<const b2Vec2&>(point));
+#else
+    return false;
 #endif
 }
 

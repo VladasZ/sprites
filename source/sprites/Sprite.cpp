@@ -52,10 +52,11 @@ Image* Sprite::image() const {
 }
 
 bool Sprite::contains(const Point& point) const {
-	return point.x >= _position.x &&
-		   point.y >= _position.y &&
-		   point.x <= _position.x + _size.width &&
-		   point.y <= _position.y + _size.height;
+	const Size s = _size / 2;
+	return point.x >= _position.x - s.width &&
+		   point.y >= _position.y - s.height &&
+		   point.x <= _position.x + s.width &&
+		   point.y <= _position.y + s.height;
 }
 
 std::string Sprite::to_string() const {

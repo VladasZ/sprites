@@ -28,6 +28,8 @@ namespace sprite {
 		float rotation() const override;
 		void fix_rotation(bool);
 
+		bool contains(const gm::Point&) const override;
+
 		const gm::Point& velocity() const;
 
 		void set_restitution(float);

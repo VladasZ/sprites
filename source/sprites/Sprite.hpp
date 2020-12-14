@@ -39,7 +39,7 @@ namespace sprite {
         Sprite* set_image(Image*);
         Image* image() const;
 
-        bool contains(const gm::Point&) const;
+        virtual bool contains(const gm::Point&) const;
 
         std::string to_string() const;
 
