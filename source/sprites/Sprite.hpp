@@ -41,6 +41,8 @@ namespace sprite {
 
         bool contains(const gm::Point&) const;
 
+        std::string to_string() const;
+
     private:
 
         void draw();

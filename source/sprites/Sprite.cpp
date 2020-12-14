@@ -8,6 +8,7 @@
 
 #include "Sprite.hpp"
 #include "Sprites.hpp"
+#include "LogUtils.hpp"
 
 using namespace gm;
 using namespace sprite;
@@ -55,6 +56,10 @@ bool Sprite::contains(const Point& point) const {
 		   point.y >= _position.y &&
 		   point.x <= _position.x + _size.width &&
 		   point.y <= _position.y + _size.height;
+}
+
+std::string Sprite::to_string() const {
+	return VarString(_position) + VarString(_size);
 }
 
 void Sprite::draw() {

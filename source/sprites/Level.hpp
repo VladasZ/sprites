@@ -40,7 +40,7 @@ namespace sprite {
 
 		void draw();
 
-		void add_box(const gm::Point&, const gm::Size&);
+		void add_box(const gm::Point&, const gm::Size& = { 1, 1 });
 
 	};
 
