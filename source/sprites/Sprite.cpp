@@ -50,6 +50,13 @@ Image* Sprite::image() const {
 	return _image;
 }
 
+bool Sprite::contains(const Point& point) const {
+	return point.x >= _position.x &&
+		   point.y >= _position.y &&
+		   point.x <= _position.x + _size.width &&
+		   point.y <= _position.y + _size.height;
+}
+
 void Sprite::draw() {
 	config::drawer()->draw(this);
 }
