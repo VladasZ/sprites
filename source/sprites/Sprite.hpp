@@ -47,6 +47,10 @@ namespace sprite {
 
         void draw();
 
+    protected:
+    
+        virtual void update() { }
+
     public:
 
         bool is_selected = false;

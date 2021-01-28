@@ -42,6 +42,14 @@ namespace sprite {
 
 		void add_box(const gm::Point&, const gm::Size& = { 1, 1 });
 
+	public:
+
+		virtual gm::Point convert_touch(const gm::Point&) = 0;
+
+#ifdef DESKTOP_BUILD
+		virtual gm::Point mouse_position() = 0;
+#endif
+
 	};
 
 }

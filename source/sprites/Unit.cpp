@@ -27,3 +27,7 @@ void Unit::go_left() {
 void Unit::go_right() {
 	add_impulse({ mass() * 10, 0 });
 }
+
+void Unit::update() {
+
+}

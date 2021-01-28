@@ -23,6 +23,10 @@ namespace sprite {
 		void go_left();
 		void go_right();
 
+	protected:
+
+		void update() override;
+
 	};
 
 }

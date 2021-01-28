@@ -26,7 +26,7 @@ Body::Body(const Point& position, const Size& size) : Sprite(position, size) {
 
 const Point& Body::position() const {
 #ifdef USING_BOX2D
-	return reinterpret_cast<const Point&>(_body->GetPosition());
+	return cu::cast<Point>(_body->GetPosition());
 #else
 	return Point::zero;
 #endif
