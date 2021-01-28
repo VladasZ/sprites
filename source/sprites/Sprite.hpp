@@ -10,9 +10,10 @@
 
 #include "Size.hpp"
 #include "Point.hpp"
-#include "Image.hpp"
 #include "Color.hpp"
 
+
+class Image;
 
 namespace sprite {
 
@@ -24,8 +25,11 @@ namespace sprite {
 
     public:
 
+        Sprite(const gm::Size&);
         Sprite(const gm::Point&, const gm::Size&);
         virtual ~Sprite() = default;
+
+        gm::Direction direction() const { return _direction; }
 
         virtual const gm::Point& position() const;
         virtual void set_position(const gm::Point&);
@@ -49,6 +53,7 @@ namespace sprite {
 
     protected:
     
+        virtual void setup() { }
         virtual void update() { }
 
     public:
@@ -58,10 +63,12 @@ namespace sprite {
 
     protected:
 
+        gm::Direction _direction = gm::Direction::Right;
         gm::Point _position;
         gm::Size _size;
         float _rotation = 0;
         Image* _image = nullptr;
+        Level* _level = nullptr;
 
     };
 

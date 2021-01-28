@@ -14,6 +14,10 @@ using namespace gm;
 using namespace sprite;
 
 
+Sprite::Sprite(const gm::Size& size) : _size(size) {
+
+}
+
 Sprite::Sprite(const Point& position, const Size& size) : _position(position), _size(size) {
 
 }

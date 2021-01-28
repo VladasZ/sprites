@@ -17,7 +17,7 @@ namespace sprite {
 		
 	public:
 
-		Unit(const gm::Point& position, const gm::Size& size);
+		using DynamicBody::DynamicBody;
 
 		void jump();
 		void go_left();

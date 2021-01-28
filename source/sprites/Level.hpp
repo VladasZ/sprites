@@ -8,18 +8,20 @@
 
 #pragma once
 
-#include "Unit.hpp"
 #include "Event.hpp"
 #include "Sprite.hpp"
+#include "BoxInclude.hpp"
 
 
 namespace sprite {
+
+	class Player;
 
 	class Level {
 
     protected:
 
-		Unit* _player = nullptr;
+		Player* _player = nullptr;
 
 #ifdef USING_BOX2D
         b2World* _world = nullptr;

@@ -11,10 +11,6 @@
 using namespace sprite;
 
 
-Unit::Unit(const gm::Point& position, const gm::Size& size) : DynamicBody(position, size) {
-
-}
-
 void Unit::jump() {
 	float impulse = mass() * 10;
 	add_impulse({0, impulse});
@@ -29,5 +25,7 @@ void Unit::go_right() {
 }
 
 void Unit::update() {
+	
+	_direction = velocity().directionX();
 
 }
