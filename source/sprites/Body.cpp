@@ -44,6 +44,12 @@ float Body::rotation() const {
 #endif
 }
 
+void Body::set_rotation(float angle) {
+    Sprite::set_rotation(angle);
+#ifdef USING_BOX2D
+#endif
+}
+
 void Body::fix_rotation(bool fixed) {
 #ifdef USING_BOX2D
     _body->SetFixedRotation(fixed);

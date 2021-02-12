@@ -37,7 +37,7 @@ namespace sprite {
         const gm::Size& size() const;
 
         virtual float rotation() const;
-        void set_rotation(float);
+        virtual void set_rotation(float);
 
         bool has_image() const;
         Sprite* set_image(Image*);

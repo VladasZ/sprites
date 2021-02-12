@@ -26,6 +26,7 @@ namespace sprite {
 		void set_position(const gm::Point&) override;
 
 		float rotation() const override;
+		void set_rotation(float) override;
 		void fix_rotation(bool);
 
 		bool contains(const gm::Point&) const override;
