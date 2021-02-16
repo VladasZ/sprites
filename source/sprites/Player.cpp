@@ -23,6 +23,8 @@ void Player::setup() {
 void Player::update() {
 	Unit::update();
 	weapon->set_position(position());
+#ifdef MOUSE
 	weapon->set_rotation(-_level->mouse_position().angle());
 	Log << _level->mouse_position().angle();
+#endif
 }
