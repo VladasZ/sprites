@@ -12,19 +12,22 @@
 
 using namespace sprite;
 
+void Player::fire() {
+    auto bullet = new DynamicBody(position(), { 1, 1 });
+
+}
 
 void Player::setup() {
-	weapon = new Sprite({1, 2});
+	weapon = new Sprite({2, 0.5});
 	weapon->color = gm::Color::green;
 	_level->add_sprite(weapon);
-	Log << "A";
 }
 
 void Player::update() {
 	Unit::update();
 	weapon->set_position(position());
-#ifdef MOUSE
-	weapon->set_rotation(-_level->mouse_position().angle());
-	Log << _level->mouse_position().angle();
+#ifdef DESKTOP_BUILD
+	weapon_angle = (_level->mouse_position() - position()).angle();
+	weapon->set_rotation(weapon_angle);
 #endif
 }

@@ -19,6 +19,7 @@ namespace sprite {
 
 		using Unit::Unit;
 
+		void fire();
 
 	protected:
 
@@ -27,6 +28,7 @@ namespace sprite {
 
 	protected:
 
+		float weapon_angle = 0;
 		Sprite* weapon = nullptr;
 
 	};
