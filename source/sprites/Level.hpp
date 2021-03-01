@@ -46,6 +46,8 @@ namespace sprite {
 
 	public:
 
+		cu::Event<gm::Point> on_click;
+
 		virtual gm::Point convert_touch(const gm::Point&) = 0;
 
 #ifdef DESKTOP_BUILD

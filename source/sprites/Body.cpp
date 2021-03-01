@@ -86,7 +86,7 @@ float Body::mass() const {
 #endif
 }
 
-void Body::add_impulse(const Point& impulse) {
+void Body::add_impulse(Point impulse) {
 #ifdef USING_BOX2D
     _body->ApplyLinearImpulseToCenter({ impulse.x, impulse.y }, true);
 #endif

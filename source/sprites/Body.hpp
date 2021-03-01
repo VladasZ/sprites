@@ -37,7 +37,7 @@ namespace sprite {
 
 		float mass() const;
 
-		void add_impulse(const gm::Point&);
+		void add_impulse(gm::Point);
 
 	protected:
 

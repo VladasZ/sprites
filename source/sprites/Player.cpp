@@ -10,17 +10,23 @@
 #include "Level.hpp"
 #include "Player.hpp"
 
+using namespace gm;
 using namespace sprite;
 
-void Player::fire() {
-    auto bullet = new DynamicBody(position(), { 1, 1 });
 
+void Player::fire(Point to) {
+	auto bullet = new DynamicBody(position() + Point { 0, 5 }, { 1, 1 });
+	_level->add_sprite(bullet);
+	bullet->add_impulse(to * 10000000);
 }
 
 void Player::setup() {
 	weapon = new Sprite({2, 0.5});
 	weapon->color = gm::Color::green;
 	_level->add_sprite(weapon);
+	_level->on_click = [this](Point pos) {
+		fire(pos);
+	};
 }
 
 void Player::update() {

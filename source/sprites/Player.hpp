@@ -19,7 +19,7 @@ namespace sprite {
 
 		using Unit::Unit;
 
-		void fire();
+		void fire(gm::Point);
 
 	protected:
 
