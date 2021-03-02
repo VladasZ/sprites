@@ -15,9 +15,10 @@ using namespace sprite;
 
 
 void Player::fire(Point to) {
+    auto impulse = (to - position()) + velocity();
 	auto bullet = new DynamicBody(position() + Point { 0, 5 }, { 1, 1 });
 	_level->add_sprite(bullet);
-	bullet->add_impulse(to * 10000000);
+	bullet->add_impulse(impulse * 1000000);
 }
 
 void Player::setup() {
