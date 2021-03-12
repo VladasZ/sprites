@@ -46,13 +46,13 @@ bool Sprite::has_image() const {
 	return _image;
 }
 
+Image* Sprite::image() const {
+	return _image;
+}
+
 Sprite* Sprite::set_image(Image* image) {
 	_image = image;
 	return this;
-}
-
-Image* Sprite::image() const {
-	return _image;
 }
 
 bool Sprite::contains(const Point& point) const {

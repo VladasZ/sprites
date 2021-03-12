@@ -40,8 +40,9 @@ namespace sprite {
         virtual void set_rotation(float);
 
         bool has_image() const;
-        Sprite* set_image(Image*);
+
         Image* image() const;
+        Sprite* set_image(Image*);
 
         virtual bool contains(const gm::Point&) const;
 
