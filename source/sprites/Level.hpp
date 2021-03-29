@@ -31,7 +31,13 @@ namespace sprite {
 
 	public:
 
+		Level(Level&&) = delete;
+    	Level(const Level&) = delete;
+    	Level& operator=(const Level& other) = delete;
+        Level& operator=(Level&& other) = delete;
+
 	    Level();
+		virtual ~Level() = default;
 
 		void add_sprite(Sprite*);
 
